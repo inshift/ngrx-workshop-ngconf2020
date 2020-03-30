@@ -17,12 +17,6 @@
       "name": "The Hobbit",
       "earnings": "100000000",
       "description": null
-    },
-    {
-      "id": "c892f256-f71c-4b2b-ad90-2e56a6e7b4ef",
-      "name": "Test",
-      "earnings": "200000",
-      "description": "testing 123"
     }
   ]
 }
