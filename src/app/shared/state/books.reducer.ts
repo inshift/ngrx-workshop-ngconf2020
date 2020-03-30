@@ -1,3 +1,4 @@
+import { booksLoaded } from './../../books/actions/books-api.actions';
 import { createReducer, on, Action, createSelector } from "@ngrx/store";
 import { BookModel, calculateBooksGrossEarnings } from "src/app/shared/models";
 import { BooksPageActions, BooksApiActions } from "src/app/books/actions";
@@ -32,10 +33,34 @@ export const booksReducer = createReducer(
       };
     }),
     on(BooksPageActions.selectBook, (state, action) => {
-      return {
-        ...state,
-        activeBookId: action.bookId
-      };
+        return {
+            ...state,
+            activeBookId: action.bookId
+        };
+    }),
+    on(BooksApiActions.booksLoaded, (state, action) => {
+        return {
+            ...state,
+            collection: action.books
+        }
+    }),
+    on(BooksApiActions.bookCreated, (state, action) => {
+        return {
+            ...state,
+            collection: createBook(state.collection, action.book)
+        }
+    }),
+    on(BooksApiActions.bookUpdated, (state, action) => {
+        return {
+            ...state,
+            collection: updateBook(state.collection, action.book)
+        }
+    }),
+    on(BooksApiActions.bookDeleted, (state, action) => {
+        return {
+            ...state,
+            collection: deleteBook(state.collection, action.bookId)
+        }
     })
 );
 
