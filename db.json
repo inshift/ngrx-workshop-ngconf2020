@@ -22,7 +22,13 @@
       "id": "3485e9f9-6373-4590-acbb-9de2100efd33",
       "name": "my book",
       "earnings": "1234",
-      "description": "testing hi"
+      "description": "testing my book"
+    },
+    {
+      "id": "eb567b29-3838-48f2-b82c-e2b55f53bff2",
+      "name": "another book",
+      "earnings": "400300",
+      "description": "a book"
     }
   ]
 }

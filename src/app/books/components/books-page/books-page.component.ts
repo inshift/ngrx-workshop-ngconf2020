@@ -21,7 +21,7 @@ export class BooksPageComponent implements OnInit {
   currentBook$: Observable<BookModel | null>;
   total$: Observable<number>;
 
-  constructor(private booksService: BooksService, private store: Store<State>) {
+  constructor(private store: Store<State>) {
     this.books$ = store.select(selectAllBooks);
     this.currentBook$ = store.select(selectActiveBook);
     this.total$ = store.select(selectBooksEarningsTotals);
@@ -53,31 +53,15 @@ export class BooksPageComponent implements OnInit {
 
   saveBook(bookProps: BookRequiredProps) {
     this.store.dispatch(BooksPageActions.createBook({ book: bookProps }));
-
-    this.booksService.create(bookProps).subscribe(book => {
-      this.removeSelectedBook();
-
-      this.store.dispatch(BooksApiActions.bookCreated({ book }));
-    });
   }
 
   updateBook(book: BookModel) {
     this.store.dispatch(
       BooksPageActions.updateBook({ bookId: book.id, changes: book })
     );
-
-    this.booksService.update(book.id, book).subscribe(book => {
-      this.store.dispatch(BooksApiActions.bookUpdated({ book }));
-    });
   }
 
   onDelete(book: BookModel) {
     this.store.dispatch(BooksPageActions.deleteBook({ bookId: book.id }));
-
-    this.booksService.delete(book.id).subscribe(() => {
-      this.removeSelectedBook();
-
-      this.store.dispatch(BooksApiActions.bookDeleted({ bookId: book.id }));
-    });
   }
 }
