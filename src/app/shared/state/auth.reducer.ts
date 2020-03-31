@@ -2,6 +2,10 @@ import { UserModel } from "../models";
 import { createReducer, on, Action } from "@ngrx/store";
 import { AuthApiActions, AuthUserActions } from "src/app/auth/actions";
 
+export const selectGettingStatus = (state: State) => state.gettingStatus;
+export const selectUser = (state: State) => state.user;
+export const selectError = (state: State) => state.error;
+
 export interface State {
     gettingStatus: boolean;
     user: null | UserModel;
