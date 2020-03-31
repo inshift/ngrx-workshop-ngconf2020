@@ -22,6 +22,7 @@ export const authReducer = createReducer(
     initialState,
     on(AuthUserActions.logout, (state, action) => {
         return {
+            ...state,
             gettingStatus: false,
             user: null,
             error: null
@@ -29,6 +30,7 @@ export const authReducer = createReducer(
     }),
     on(AuthUserActions.login, (state, action) => {
       return {
+        ...state,
         gettingStatus: true,
         user: null,
         error: null
@@ -36,6 +38,7 @@ export const authReducer = createReducer(
     }),
     on(AuthApiActions.getAuthStatusSuccess, (state, action) => {
       return {
+        ...state,
         gettingStatus: false,
         user: action.user,
         error: null
@@ -43,6 +46,7 @@ export const authReducer = createReducer(
     }),
     on(AuthApiActions.loginSuccess, (state, action) => {
       return {
+        ...state,
         gettingStatus: false,
         user: action.user,
         error: null
@@ -50,6 +54,7 @@ export const authReducer = createReducer(
     }),
     on(AuthApiActions.loginFailure, (state, action) => {
       return {
+        ...state,
         gettingStatus: false,
         user: null,
         error: action.reason
