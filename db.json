@@ -19,16 +19,28 @@
       "description": null
     },
     {
-      "id": "3485e9f9-6373-4590-acbb-9de2100efd33",
-      "name": "my book",
-      "earnings": "1234",
-      "description": "testing my book"
-    },
-    {
       "id": "eb567b29-3838-48f2-b82c-e2b55f53bff2",
       "name": "another book",
       "earnings": "400300",
-      "description": "a book"
+      "description": "a book 3"
+    },
+    {
+      "id": "225cbe47-5aee-48c0-89d9-6fbba143dd74",
+      "name": "test2",
+      "earnings": "12345",
+      "description": "desc"
+    },
+    {
+      "id": "c82f4dbd-0cec-4961-862b-0212f2f05fe7",
+      "name": "test3",
+      "earnings": "1234",
+      "description": "hi"
+    },
+    {
+      "id": "daa38a27-58ec-4c6b-8e7e-c57bf9f19c6c",
+      "name": "test4",
+      "earnings": "100",
+      "description": "testing"
     }
   ]
 }
