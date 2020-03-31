@@ -25,12 +25,6 @@
       "description": "a book 3"
     },
     {
-      "id": "225cbe47-5aee-48c0-89d9-6fbba143dd74",
-      "name": "test2",
-      "earnings": "12345",
-      "description": "desc"
-    },
-    {
       "id": "c82f4dbd-0cec-4961-862b-0212f2f05fe7",
       "name": "test3",
       "earnings": "1234",
